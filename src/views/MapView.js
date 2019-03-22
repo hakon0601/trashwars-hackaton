@@ -59,7 +59,9 @@ class MapView extends Component<Props, State> {
   renderAreas() {
     return this.props.areas.map(area => {
       const areaClaim = getAreaClaim(this.props.claims.claims, area.areaId);
-      const fulfilledClaim = this.props.claims.fulfilledClaim.find(claim => claim && claim.areaId === area.areaId);
+      const fulfilledClaim = this.props.claims.fulfilledClaim.find(
+        claim => claim && claim.areaId === area.areaId
+      );
 
       let fillColor = '#000';
       if (
@@ -99,7 +101,7 @@ class MapView extends Component<Props, State> {
 
   renderClaimView() {
     const { ui, claims, clans, areas, user, setCurrentView } = this.props;
-    if (!ui.selectedAreaId) return null;
+    if (!ui.selectedAreaId || ui.currentView === 'COMPLETE') return null;
     const areaClaim = getAreaClaim(claims.claims, ui.selectedAreaId);
     const selectedAreaIsClaimedByMe =
       areaClaim && areaClaim.clanId === ui.selectedClanId;

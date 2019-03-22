@@ -1,6 +1,6 @@
 // @flow
 
-export type View = 'MAIN' | 'LEADERBOARD';
+export type View = 'MAIN' | 'LEADERBOARD' | 'COMPLETE';
 
 export type State = {
   randomVariable: boolean,
