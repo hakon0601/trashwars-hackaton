@@ -26,4 +26,4 @@ secrets.js
 # Jet brains
 .idea/
 
-secrets.js
+# secrets.js
